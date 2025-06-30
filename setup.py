@@ -25,6 +25,9 @@ setup(
     entry_points={
         'console_scripts': [
             'run = crazyflie_leader_follower.run:main',
+            'run_ekf = crazyflie_leader_follower.run_ekf:main',
+            'run_traj = crazyflie_leader_follower.run_traj:main',
+            'run_joy = crazyflie_leader_follower.run_joy:main',
         ],
     },
 )
