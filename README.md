@@ -62,21 +62,7 @@ sudo apt install ros-humble-joy
 Please follow the link below for steps to make sure your logitech F710 console is ready:
 Please follow [this guide](https://husarion.com/tutorials/ros-equipment/gamepad-f710/) to make sure your Logitech F710 console is ready.
 
-## 🎮 Joystick Mapping (Logitech F710)
 
-Make sure your controller is in **DirectInput mode ('D')**.
-
-| Control       | Function                         |
-| ------------- | -------------------------------- |
-| Left Stick    | Move XY                          |
-| Right Stick Y | Adjust altitude (Z)              |
-| Right Stick X | Yaw (Left/Right spin)            |
-| Button A      | Activate joystick control        |
-| Left Trigger  | **Takeoff**                      |
-| Right Trigger | **Land**                         |
-| MODE Button   | Must be set to **‘D’**           |
-
-![Logitech F710 Drone Mapping](image.png)
 
 ## ⚙️ Setup Instructions
 Terminal 1:
@@ -145,10 +131,22 @@ ros2 run crazyflie_leader_follower run_ekf
 * Use Logitech F710 joystick to move the leader drone in real-time.
 * Follower keeps a fixed distance behind the leader.
 * Axis mapping:
+#### 🎮 Joystick Mapping (Logitech F710)
 
-  * **Left stick**: move XY
-  * **Right stick Y**: adjust altitude
-  * **Button A (Bottom button)**: start joystick control
+Make sure your controller is in **DirectInput mode ('D')**.
+
+| Control       | Function                         |
+| ------------- | -------------------------------- |
+| Left Stick    | Move XY                          |
+| Right Stick Y | Adjust altitude (Z)              |
+| Right Stick X | Yaw (Left/Right spin)            |
+| Button A      | Activate joystick control        |
+| Left Trigger  | **Takeoff**                      |
+| Right Trigger | **Land**                         |
+| MODE Button   | Must be set to **‘D’**           |
+
+![Logitech F710 Drone Mapping](image.png)
+ 
 
 > **NOTE:** You must start the joystick driver separately:
 ```bash
@@ -189,18 +187,6 @@ ros2 run crazyflie_leader_follower run_traj
 | `/joy`              | `sensor_msgs/Joy` | Joystick input (F710)                    |
 | `/cf231/kalman_var`   | `LogDataGeneric`  | EKF variance monitoring                  |
 | `/cf231/cmd_position` | `Position`        | Position control (used in joystick)      |
-
----
-
-## 🎮 Joystick Mapping (Logitech F710)
-
-| Control       | Function                        |
-| ------------- | ------------------------------- |
-| Left Stick    | XY movement                     |
-| Right Stick Y | Altitude (Z)                    |
-| Button A      | Activate joystick               |
-| Button B      | Not used                        |
-| Right Stick X | Yaw (optional, not implemented) |
 
 ---
 
