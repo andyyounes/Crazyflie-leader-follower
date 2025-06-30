@@ -15,7 +15,7 @@ This repository contains multiple scripts for simulating or executing a **leader
 | `run.py`               | Standard leader–follower mission with predefined waypoints                  |
 | `run_ekf.py`           | Uses EKF pose estimation if motion capture is unavailable                   |
 | `run_joy.py`           | Enables joystick control (e.g. Logitech F710) for leader                    |
-| `trajectory_follow.py` | Generates and visualizes circular trajectories for leader–follower missions |
+| `run_traj.py` | Generates and visualizes circular trajectories for leader–follower missions |
 
 ---
 
@@ -28,6 +28,40 @@ Ensure the following are installed:
 * `numpy`, `matplotlib` (for trajectory visualization)
 
 ---
+## Installation process:
+Ros2 requirements:
+```bash
+sudo apt install ros-humble-rclpy
+sudo apt install ros-humble-geometry-msgs
+sudo apt install ros-humble-sensor-msgs
+sudo apt install ros-humble-crazyflie-interfaces
+```
+
+Since this is a custom package from crazyswarm2:
+```bash
+cd ~/ros2_ws/src
+git clone https://github.com/IMRCLab/crazyflie_ros2.git
+cd ..
+colcon build
+source install/setup.bash
+```
+```bash
+git clone https://github.com/andyyounes/Crazyflie-leader-follower
+cd Crazyflie-leader-follower
+```
+Make sure you have the installation requirements:
+```bash
+pip install -r requirements.txt
+```
+
+```bash
+cd ~/ros2
+sudo apt install ros-humble-joy
+```
+
+Please follow the link below for steps to make sure your logitech F710 console is ready:
+Please follow [this guide](https://husarion.com/tutorials/ros-equipment/gamepad-f710/) to make sure your Logitech F710 console is ready.
+
 
 ## ⚙️ Setup Instructions
 Terminal 1:
@@ -102,19 +136,16 @@ ros2 run crazyflie_leader_follower run_ekf
   * **Button A (Bottom button)**: start joystick control
 
 > **NOTE:** You must start the joystick driver separately:
-
 ```bash
 ros2 run joy joy_node
 ```
 
 Then, run for simulation:
-
 ```bash
 ros2 run crazyflie_leader_follower run_joy --ros-args -p use_sim_time:=True
 ```
-For real expiriment:
-Then, run for simulation:
 
+For real experiment:
 ```bash
 ros2 run crazyflie_leader_follower run_joy 
 ```
