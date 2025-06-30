@@ -62,6 +62,21 @@ sudo apt install ros-humble-joy
 Please follow the link below for steps to make sure your logitech F710 console is ready:
 Please follow [this guide](https://husarion.com/tutorials/ros-equipment/gamepad-f710/) to make sure your Logitech F710 console is ready.
 
+## 🎮 Joystick Mapping (Logitech F710)
+
+Make sure your controller is in **DirectInput mode ('D')**.
+
+| Control       | Function                         |
+| ------------- | -------------------------------- |
+| Left Stick    | Move XY                          |
+| Right Stick Y | Adjust altitude (Z)              |
+| Right Stick X | Yaw (Left/Right spin)            |
+| Button A      | Activate joystick control        |
+| Left Trigger  | **Takeoff**                      |
+| Right Trigger | **Land**                         |
+| MODE Button   | Must be set to **‘D’**           |
+
+![Logitech F710 Drone Mapping](image.png)
 
 ## ⚙️ Setup Instructions
 Terminal 1:
