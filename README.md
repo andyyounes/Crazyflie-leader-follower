@@ -164,7 +164,7 @@ ros2 run crazyflie_leader_follower run_joy
 ```
 ---
 
-### 4. `trajectory_follow.py` – Predefined Circular Trajectory
+### 4. `run_traj.py` – Predefined Circular Trajectory
 
 * Leader follows a **circular 3D path**, and publishes pose messages.
 * Follower subscribes and maintains a fixed offset behind the leader.
